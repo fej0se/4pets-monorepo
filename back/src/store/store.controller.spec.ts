@@ -212,6 +212,27 @@ describe('StoreController with test env', () => {
     expect(response.body.data.message).toBe(NO_PRODUCTS_FOUND);
   });
 
+  it('should not get products with department 10', async () => {
+    const response = await request(app.getHttpServer()).get(
+      '/store/getAllByDep?department=10&limit=2&page=1',
+    );
+
+    console.log(response.body);
+
+    expect(response.status).toBe(HttpStatus.NOT_FOUND);
+    expect(response.body.success).toBeFalsy;
+    expect(response.body.data.message).toBe(NO_PRODUCTS_FOUND);
+  });
+
+  it('should get products with department 1', async () => {
+    const response = await request(app.getHttpServer()).get(
+      '/store/getAllByDep?department=1&limit=2&page=1',
+    );
+
+    expect(response.status).toBe(HttpStatus.OK);
+    expect(response.body.success).toBeTruthy;
+  });
+
   it('should find a product by name', async () => {
     const response = await request(app.getHttpServer()).get(
       '/store/search?name=superman&page=1',
