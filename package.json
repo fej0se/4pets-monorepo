@@ -1,0 +1,22 @@
+{
+  "name": "4pets-monorepo",
+  "version": "1.0.0",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "back",
+    "front"
+  ],
+  "scripts": {
+    "start": "yarn workspace @4pets-monorepo/back start:dev && yarn workspace @4pets-monorepo/front start",
+    "start:front": "yarn workspace @4pets-monorepo/front start",
+    "start:back": "yarn workspace @4pets-monorepo/back start:dev",
+    "prod:back": "yarn workspace @4pets-monorepo/back start:prod",
+    "prod:front": "yarn workspace @4pets-monorepo/front start:prod",
+    "test:back": "yarn workspace @4pets-monorepo/back test:cov",
+    "build": "yarn workspace @4pets-monorepo/back build && yarn workspace @4pets-monorepo/front build",
+    "build:back": "yarn workspace @4pets-monorepo/back build",
+    "build:front": "yarn workspace @4pets-monorepo/front build"
+  },
+  "author": "Felipe José <felipej0se@icloud.com>"
+}

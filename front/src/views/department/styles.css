@@ -1,0 +1,122 @@
+.deptocontainer {
+  margin-top: 65px;
+  margin-left: 65px;
+}
+
+.deptocontainer img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.categ {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 15%;
+}
+
+.lastproducts h3 {
+  margin: 0 7%;
+  text-align: left;
+  vertical-align: top;
+  font-size: 38px;
+  font-family: Poppins;
+  font-weight: bold;
+  line-height: 110.00000238418579%;
+  color: #000;
+}
+
+.lastproducts h1 {
+  margin: 4% 7%;
+  text-align: left;
+  vertical-align: top;
+  font-size: 50px;
+  font-family: Poppins;
+  font-weight: bold;
+  line-height: 110.00000238418579%;
+  color: #000;
+}
+
+.btnback {
+  height: 84px;
+  width: 261px;
+}
+.btnform {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  border-radius: 50px;
+  height: 84px;
+  width: 261px;
+  background-color: #ffffff;
+  border: 1px solid #a6e3c7;
+}
+
+.btnform img {
+  padding-top: 10px;
+  height: auto;
+  width: 55px;
+}
+
+.btnform p {
+  padding-top: 15px;
+  max-width: 144px;
+  font-size: 18px;
+  font-weight: 700;
+  font-family: Poppins;
+}
+
+@media screen and (max-width: 1024px) {
+  .back {
+    display: flex;
+    margin: 20px;
+  }
+
+  .back img {
+    height: auto;
+    width: 40px;
+  }
+
+  .back p {
+    padding-left: 10px;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 40px;
+    font-family: Poppins;
+  }
+
+  h1 {
+    padding-left: 40px;
+  }
+
+  .caty {
+    display: flex;
+    margin: 20px;
+    margin-left: 60px;
+  }
+
+  .caty img {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+  }
+
+  .prods {
+    margin-left: 20px;
+  }
+
+  .caty a {
+    margin-left: 20px;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 18px;
+    font-family: Roboto;
+    line-height: 85px;
+    color: #000;
+    text-decoration: none;
+  }
+
+  .catys {
+    margin-bottom: 20%;
+  }
+}

@@ -1,0 +1,118 @@
+.container {
+  display: flex;
+  margin: 10px auto 30px;
+  max-width: 1072;
+  padding-top: 50px;
+}
+
+.txttitle {
+  font-size: 50px;
+  font-family: Poppins;
+  color: #c08047;
+  font-weight: bold;
+}
+
+.text {
+  font-size: 14px;
+  font-family: Roboto;
+  color: #000;
+}
+
+.container:last-child {
+  display: flex;
+  margin: 10px auto 30px;
+  max-width: 1283;
+  font-family: sans-serif;
+  padding-top: 50px;
+}
+
+.just {
+  justify-content: space-around;
+}
+
+.container img {
+  max-width: 100%;
+  height: auto;
+}
+
+.textcontainer {
+  width: 430px;
+  text-align: justify;
+  word-wrap: break-word;
+}
+
+.txttitletalk {
+  font-size: 50px;
+  font-family: Poppins;
+  color: #2e7d95;
+  font-weight: bold;
+}
+
+.formarea {
+  height: 200px;
+}
+
+.btnabout {
+  height: 48px;
+  width: 145px;
+  border-radius: 50px;
+  background-color: #2e7c94;
+  font-size: 16px;
+  font-family: Poppins;
+  font-weight: bold;
+  color: #fffdfa;
+}
+
+.pd {
+  padding-right: 30px;
+}
+
+.containerMobile {
+  width: 100%;
+}
+
+.aboutMobile {
+  width: 80%;
+  text-align: justify;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.aboutMobile h3 {
+  text-align: center;
+  font-family: Poppins;
+  color: #000000;
+  font-weight: bold;
+}
+
+.aboutMobile p {
+  font-size: 14px;
+  font-family: Roboto;
+  color: #000;
+}
+
+@media screen and (max-width: 1024px) {
+  .flexWrapperOneCA {
+    background-color: rgba(255, 255, 255, 0.85);
+    border-radius: 8px;
+    padding: 17px 0 14.92px 10px;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+    display: flex;
+    align-items: flex-start;
+    width: 90%;
+  }
+  .formFieldCA {
+    font-family: "Roboto";
+    font-size: 16px;
+    font-weight: 700;
+    color: rgba(158, 154, 154, 1);
+    flex: 1;
+    align-self: stretch;
+    letter-spacing: 0.48px;
+    width: 100%;
+  }
+
+  .fixfooter {
+    margin-bottom: 20%;
+  }
+}

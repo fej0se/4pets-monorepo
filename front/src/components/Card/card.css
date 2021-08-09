@@ -1,0 +1,61 @@
+.cardprod {
+  height: 486px;
+  width: 326px;
+  border: 8px solid #ededed;
+}
+.imagem {
+  height: 188px;
+  width: 164px;
+  margin: auto;
+  width: 50%;
+  padding-top: 38px;
+}
+.titletext {
+  text-align: center;
+  font-size: 12px;
+  font-family: Roboto;
+  font-weight: bold;
+  color: #000;
+}
+.descriptiontext {
+  text-align: justify;
+  -moz-text-align-last: center;
+  text-align-last: center;
+  font-size: 16px;
+  font-family: Roboto;
+  color: #000;
+}
+.btnactive {
+  height: 48px;
+  width: 145px;
+  border-radius: 50px;
+  background-color: #2e7c94;
+  font-size: 16px;
+  font-family: Poppins;
+  font-weight: bold;
+  color: #fffdfa;
+}
+
+.btnbottom {
+  position: absolute;
+  justify-content: center;
+  bottom: 10px;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.prodcat {
+  width: 114px;
+  height: 31px;
+}
+
+.prodcat p {
+  padding-top: 3px;
+  text-align: center;
+  vertical-align: top;
+  font-size: 16px;
+  font-family: Roboto;
+  color: #fffdfb;
+}

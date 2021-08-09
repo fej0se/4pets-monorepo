@@ -1,0 +1,119 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900italic,900);
+@import url(https://fonts.googleapis.com/css?family=Poppins);
+
+.NvBackground {
+  padding-left: 10%;
+  padding-right: 10%;
+  background: conic-gradient(
+    from 50deg at 18% 100%,
+    #fcc869,
+    #fcc869,
+    #ffffff,
+    #ffffff
+  );
+}
+
+.alignCenter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+nav .navbar-nav li a {
+  color: rgba(0, 0, 0, 0.7) !important;
+  font-size: 18px;
+}
+
+.NvMobile {
+  background-color: #fcc869;
+}
+
+.social img {
+  max-width: 50px;
+  height: auto;
+}
+
+.navbar-nav a {
+  vertical-align: top;
+  font-size: 18px;
+  font-family: Roboto;
+  color: #333030;
+}
+
+.flexWrapperOneNav {
+  border-radius: 8px;
+  padding: 17px 0 14.92px 10px;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  display: flex;
+  align-items: flex-start;
+  width: 90%;
+  background: url(https://endlessicons.com/wp-content/uploads/2015/08/search-icon-2.png);
+  background-size: 50px 50px;
+  background-repeat: no-repeat;
+  background-position: right 50%;
+}
+.formFieldNav {
+  background-color: rgba(255, 255, 255, 0.85);
+  font-family: "Roboto";
+  font-size: 16px;
+  font-weight: 700;
+  color: rgba(158, 154, 154, 1);
+  flex: 1;
+  align-self: stretch;
+  letter-spacing: 0.48px;
+  width: 400px;
+}
+
+.flexWrapperOneMobile {
+  border-radius: 8px;
+  padding: 17px 0 14.92px 10px;
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+  display: flex;
+  align-items: flex-start;
+  width: 90%;
+  background: url(https://endlessicons.com/wp-content/uploads/2015/08/search-icon-2.png);
+  background-size: 50px 50px;
+  background-repeat: no-repeat;
+  background-position: right 50%;
+}
+.formFieldMobile {
+  background-color: rgba(255, 255, 255, 0.85);
+  font-family: "Roboto";
+  font-size: 16px;
+  font-weight: 700;
+  color: rgba(158, 154, 154, 1);
+  flex: 1;
+  align-self: stretch;
+  letter-spacing: 0.48px;
+  width: 220px;
+}
+@media screen and (max-width: 1484px) {
+  .NvBackground {
+    padding-left: 10%;
+    padding-right: 10%;
+    background: conic-gradient(
+      from 25deg at 18.5% 100%,
+      #fcc869,
+      #ffffff,
+      #ffffff
+    );
+  }
+}
+
+@media screen and (max-width: 1265px) {
+  .NvBackground {
+    padding-left: 10%;
+    padding-right: 10%;
+    background: conic-gradient(
+      from 25deg at 17% 100%,
+      #fcc869,
+      #ffffff,
+      #ffffff
+    );
+  }
+
+  .social img {
+    max-width: 30px;
+    height: auto;
+  }
+}

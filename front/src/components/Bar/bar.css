@@ -1,0 +1,38 @@
+.bar {
+  background-color: #fff8ee;
+}
+
+.items {
+  display: flex;
+  height: 61px;
+  margin-left: 30%;
+  margin-right: 30%;
+}
+
+.textBar {
+  text-align: left;
+  vertical-align: top;
+  font-size: 18px;
+  font-family: Roboto;
+  letter-spacing: 0.4848484992980957px;
+  color: #403d3d;
+  text-decoration: none;
+  margin: auto;
+}
+
+.textBar:hover {
+  text-align: left;
+  vertical-align: top;
+  font-size: 18px;
+  font-family: Roboto;
+  letter-spacing: 0.4848484992980957px;
+  color: #403d3d;
+  text-decoration: none;
+  margin: auto;
+}
+
+@media screen and (max-width: 1024px) {
+  .bar {
+    display: none;
+  }
+}

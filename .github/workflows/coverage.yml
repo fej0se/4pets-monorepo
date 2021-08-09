@@ -1,0 +1,34 @@
+name: Unit Tests (Coverage)
+
+on: pull_request
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '14.x'
+
+      - name: Install dependencies
+        run: npm i -g yarn
+        run: yarn install
+
+      - name: Collect coverage
+        run: yarn test:back > OUT; sed -n 6,8p OUT > .github/workflows/COVERAGE_REPORT
+        env:
+          DB_HOST: 144.126.222.3
+          DB_PORT: 32768
+          DB_USER: root
+          DB_PASS: ${{ secrets.DB_PASS }}
+          DB_DIALECT: mysql
+          DB_NAME_TEST: test_database_name
+          DB_NAME_STAGING: staging_database_name
+          DB_NAME_PRODUCTION: production_database_name
+
+      - uses: harupy/comment-on-pr@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          filename: COVERAGE_REPORT

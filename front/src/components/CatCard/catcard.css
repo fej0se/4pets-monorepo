@@ -1,0 +1,52 @@
+.cardcat {
+  border: 8px solid #ededed;
+}
+
+.child {
+  flex: 1 0 40%; /* explanation below */
+  margin: 5px;
+}
+
+.imagemcat {
+  padding-top: 22px;
+  max-width: 164px;
+  height: auto;
+}
+
+.cccontainer {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.cctxt {
+  padding-top: 45px;
+  max-width: 188px;
+  height: auto;
+}
+
+.cctxt h5 {
+  text-align: center;
+  vertical-align: top;
+  font-size: 28px;
+  font-family: Poppins;
+  color: #000;
+}
+
+.cctxt p {
+  text-align: justify;
+  vertical-align: top;
+  font-size: 12px;
+  font-family: Roboto;
+  color: #000;
+}
+
+.btnactive {
+  height: 48px;
+  width: 145px;
+  border-radius: 50px;
+  background-color: #2e7c94;
+  font-size: 16px;
+  font-family: Poppins;
+  font-weight: bold;
+  color: #fffdfa;
+}

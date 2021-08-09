@@ -1,0 +1,277 @@
+.productcontainer {
+  background-color: #ffffff;
+  margin: 25px 12%;
+  overflow-y: hidden;
+}
+.productfirst {
+  display: flex;
+  margin: 10px auto 30px;
+  max-width: 1072;
+  padding-top: 10px;
+}
+.just {
+  justify-content: space-around;
+}
+
+.textcontainer {
+  width: 430px;
+  text-align: justify;
+  word-wrap: break-word;
+}
+
+.productphoto {
+  height: 527px;
+  width: 578px;
+}
+.text {
+  font-size: 12px;
+  font-family: Roboto;
+  color: #000;
+}
+.producttitle {
+  font-size: 50px;
+  font-family: Poppins;
+  font-weight: bold;
+  color: #666666;
+}
+.desctxt {
+  text-align: left;
+  vertical-align: top;
+  font-size: 28px;
+  font-family: Poppins;
+  color: #000;
+}
+
+.texttostore {
+  padding-top: 75px;
+  text-align: left;
+  vertical-align: top;
+  font-size: 28px;
+  font-family: Poppins;
+  line-height: 120.00000476837158%;
+  color: #666666;
+}
+
+.moreinfo {
+  padding-top: 50px;
+}
+
+.texttostore a {
+  text-decoration: none;
+  color: #2e7d95;
+}
+.sizes {
+  display: flex;
+  margin-top: 40px;
+  justify-content: space-between;
+}
+.size {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 45px;
+  text-align: center;
+}
+
+.size span {
+  padding: auto;
+  font-size: 18px;
+  font-family: Roboto;
+  color: #000;
+}
+
+.sizemodalbtn {
+  margin-top: 40px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 143px;
+  height: 52px;
+  background-color: #fcc869;
+  cursor: pointer;
+}
+
+.sizemodalbtn span {
+  padding: auto;
+  font-size: 18px;
+  font-family: Roboto;
+  color: #000;
+}
+
+.modaltitle {
+  margin: 0 4%;
+  text-align: center;
+  vertical-align: top;
+  font-size: 38px;
+  font-family: Poppins;
+  font-weight: bold;
+  color: #000;
+}
+
+.modalclose {
+  font-size: 25px;
+  font-family: Poppins;
+  font-weight: bold;
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modalform {
+  background-color: fffdfb;
+  border-radius: 7px;
+  padding: 17px 0 14.92px 10px;
+  display: flex;
+  border: 1px solid #9e9999;
+  align-items: flex-start;
+  width: 90%;
+}
+.modalformtxt {
+  font-family: "Roboto";
+  font-size: 16px;
+  font-weight: 700;
+  line-height: normal;
+  color: rgba(158, 154, 154, 1);
+  flex: 1;
+  align-self: stretch;
+  width: 243px;
+  height: 50px;
+}
+
+.modallcont {
+  width: 100%;
+  display: flex;
+  padding-top: 10px;
+  justify-content: space-around;
+}
+
+.recsize {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 247px;
+  height: 60px;
+  background-color: #98b2ba;
+  margin-bottom: 60px;
+}
+
+.recsize p {
+  text-align: center;
+  font-size: 18px;
+  font-family: Roboto;
+  color: #fffdfb;
+}
+
+.recsize span {
+  margin-top: -20px;
+  text-align: center;
+  font-size: 28px;
+  font-family: Poppins;
+  color: #fffdfb;
+}
+
+.modalfirst p {
+  padding-top: 25px;
+  text-align: left;
+  vertical-align: middle;
+  font-size: 22px;
+  font-family: Poppins;
+  line-height: 120.00000476837158%;
+  color: #373533;
+}
+
+.modalsecond {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.prodbtnactive {
+  padding-top: 5px;
+  height: 48px;
+  width: auto;
+  border-radius: 50px;
+  background-color: #2e7c94;
+  font-size: 16px;
+  font-family: Poppins;
+  font-weight: bold;
+  color: #fffdfa;
+}
+
+.storeinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+@media screen and (max-width: 1024px) {
+  .producttitle {
+    font-size: 25px;
+    padding: 20px;
+    font-family: Poppins;
+    font-weight: bold;
+    color: #666666;
+    text-align: center;
+  }
+
+  .productMobi img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 80%;
+    height: auto;
+  }
+
+  .productMobi {
+    max-width: 100%;
+  }
+
+  .textcontainerMobi {
+    padding-top: 20px;
+    text-align: justify;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 80%;
+  }
+
+  .sizemodalbtn {
+    display: none;
+  }
+
+  .sizes {
+    max-width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+  }
+
+  .texttostore {
+    padding-top: 10px;
+    text-align: left;
+    vertical-align: top;
+    font-size: 20px;
+    font-family: Poppins;
+    line-height: 120.00000476837158%;
+    color: #666666;
+  }
+
+  .texttostore span {
+    background-color: #fff;
+  }
+
+  .sizetxt {
+    padding-top: 20px;
+    text-align: center;
+    vertical-align: top;
+    font-size: 20px;
+    font-family: Poppins;
+    color: #000000;
+  }
+
+  .prodbtnactive {
+    margin-bottom: 100px;
+  }
+}
