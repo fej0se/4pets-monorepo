@@ -41,6 +41,23 @@
     <script>
       new window.VLibras.Widget("https://vlibras.gov.br/app");
     </script>
+
+    <script>
+      if ("serviceWorker" in navigator) {
+        // Register a service worker hosted at the root of the
+        // site using the default scope.
+        navigator.serviceWorker.register("/service-worker.js").then(
+          function (registration) {
+            console.log("Service worker registration succeeded:", registration);
+          },
+          /*catch*/ function (error) {
+            console.log("Service worker registration failed:", error);
+          }
+        );
+      } else {
+        console.log("Service workers are not supported.");
+      }
+    </script>
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
@@ -52,18 +69,4 @@
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
   </body>
-
-  <script>
-    if ("serviceWorker" in navigator) {
-      console.log("Will the service worker register?");
-      navigator.serviceWorker
-        .register("service-worker.js")
-        .then(function (reg) {
-          console.log("Yes, it did.");
-        })
-        .catch(function (err) {
-          console.log("No it didn't. This happened:", err);
-        });
-    }
-  </script>
 </html>
