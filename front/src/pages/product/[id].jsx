@@ -7,12 +7,13 @@ import api from "../../services/api";
 
 import { Footer } from "../../components/Footer";
 import { Nav } from "../../components/Nav";
-import prodimg from "../../assets/productimg.png";
 import sizeimg from "../../assets/sizes.png";
 import line from "../../assets/line.png";
 import dogmodal from "../../assets/modaldog.png";
 import first from "../../assets/first.png";
 import secondary from "../../assets/secondary.png";
+import { PageError } from "../../components/PageError";
+
 import "./styles.css";
 
 //...
@@ -23,6 +24,7 @@ const Product = () => {
   const [size, setSize] = useState(null);
   const [isLoading, setLoading] = useState(true);
   const [data, setData] = useState("");
+  const [error, setError] = useState(false);
 
   useEffect(() => {
     api
@@ -31,8 +33,10 @@ const Product = () => {
         setData(response.data.data);
         setLoading(false);
       })
-      .catch((err) => {
-        console.error("ops! ocorreu um erro" + err);
+      .catch(() => {
+        setError("404");
+        setLoading(false);
+        return;
       });
   }, []);
 
@@ -137,7 +141,7 @@ const Product = () => {
           </div>
           <div onClick={() => openModal()} className="sizemodalbtn">
             <span className="text">Medidas</span>
-            <img src={sizeimg} alt="" />
+            <img src={sizeimg} alt="regua de medida" />
           </div>
         </div>
       );
@@ -146,7 +150,17 @@ const Product = () => {
   }
 
   if (isLoading) {
-    return <div className="App">Loading...</div>;
+    return <div className="App">Carregando...</div>;
+  }
+
+  if (error) {
+    return (
+      <>
+        <Nav />
+        <PageError error={error} />
+        <Footer />{" "}
+      </>
+    );
   }
 
   return (
@@ -183,23 +197,20 @@ const Product = () => {
 
       <Mobile>
         <div className="title">
-          <p className="producttitle">Roupinha bonitinha</p>
+          <p className="producttitle">{data.name}</p>
         </div>
         <div className="productMobi">
-          <img src={prodimg} alt="" />
+          <img src={data.image} alt={data.name} />
           <p className="sizetxt">Tamanho</p>
           <RenderSizes isDog={true} />
 
           <div className=" textcontainerMobi">
             <p className="desctxt">Descrição</p>
-            <p className="text">
-              Roupinha bonitinha, feita com tecido confortável, protege seu pet
-              do frio, antialergica e não deixa insetos terem contato com a pele
-              do animal. Aqui também terá informações técnicas sobre qual tipo
-              de tecido é feita a roupa e se tiver uma marca, qual é.
-            </p>
+            <p className="text">{data.description}</p>
             <div className="storeinfo">
-              <p className="texttostore">Vendido por {}</p>
+              <p className="texttostore">
+                Vendido por <span>{data.storeName}</span>
+              </p>
               <Button className="prodbtnactive">
                 Clique aqui para comprar
               </Button>
@@ -221,7 +232,7 @@ const Product = () => {
             </span>
           </div>
           <h3 className="modaltitle">Tabela de medidas</h3>
-          <img src={line} alt="" />
+          <img src={line} alt="linha" />
           <div className="modallcont">
             <div className="modalfirst">
               <Form>
@@ -326,10 +337,10 @@ const Product = () => {
                 </Form.Select>
               </Form>
               <p>PESCOÇO</p>
-              <img src={first} alt="" />
+              <img src={first} alt="tabela pescoco" />
 
               <p>PEITO</p>
-              <img src={secondary} alt="" />
+              <img src={secondary} alt="tabela peito" />
             </div>
             <div className="modalsecond">
               <div className="recsize">
@@ -337,7 +348,7 @@ const Product = () => {
 
                 <span>{size ? size : "-"}</span>
               </div>
-              <img src={dogmodal} alt="" />
+              <img src={dogmodal} alt="cachorro modelo medida" />
             </div>
           </div>
         </div>

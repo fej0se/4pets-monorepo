@@ -17,7 +17,11 @@ export const CatCard = (props) => {
       >
         <div className="cccontainer">
           <div>
-            <img className="imagemcat" src={props.cat.image} alt="" />
+            <img
+              className="imagemcat"
+              src={props.cat.image}
+              alt="imagem da categoria"
+            />
           </div>
           <div className="cctxt">
             <h5 className="card-title ">{props.cat.name}</h5>

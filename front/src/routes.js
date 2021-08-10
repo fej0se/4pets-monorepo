@@ -1,13 +1,13 @@
 import React from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import App from "./App";
-import Category from "./views/category/[id]";
+import Category from "./pages/category/[id]";
 
-import AboutContact from "./views/aboutcontact";
-import Department from "./views/department/[name]";
-import Product from "./views/product/[id]";
-import Search from "./views/search/[value]";
-import ErrorNotFound from "./views/error";
+import AboutContact from "./pages/aboutcontact";
+import Department from "./pages/department/[name]";
+import Product from "./pages/product/[id]";
+import Search from "./pages/search/[value]";
+import ErrorNotFound from "./pages/error";
 import ScrollToTop from "./scrollToTop";
 
 const Router = () => {

@@ -182,7 +182,7 @@ export class StoreController {
       parseInt(page),
     );
 
-    if (response.count === 0) {
+    if (response.rows.length === 0) {
       res.status(HttpStatus.NOT_FOUND).send({
         success: false,
         data: { message: NO_PRODUCTS_FOUND },

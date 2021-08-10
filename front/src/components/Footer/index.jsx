@@ -32,11 +32,11 @@ export const Footer = (props) => {
       <Desktop>
         <div>
           <div className="right">
-            <img src={cat} alt="" />
+            <img src={cat} alt="gato feliz mostrando lingua" />
           </div>
           <div className="footerr">
             <img
-              alt=""
+              alt="cachorro feliz mostrando lingua"
               className="dog1"
               src="https://static.overlay-tech.com/assets/f2762da4-8c03-4615-9825-b52c114e98d3.png"
             />
@@ -60,17 +60,17 @@ export const Footer = (props) => {
                 <p className="redesSociais">Redes Sociais</p>
                 <div className="redeSocial">
                   <img
-                    alt=""
+                    alt="botao facebook"
                     className="ellipse7"
                     src="https://static.overlay-tech.com/assets/0a6c99e4-ab70-4288-93aa-3fe6d1a6b1d2.png"
                   />
                   <img
-                    alt=""
+                    alt="botao instagram"
                     className="ellipse7"
                     src="https://static.overlay-tech.com/assets/2d46c838-964b-4deb-a44d-d84baa3a5fec.png"
                   />
                   <img
-                    alt=""
+                    alt="botao youtube"
                     className="ellipse7"
                     src="https://static.overlay-tech.com/assets/0fa7147a-d3e0-4850-8cd4-bf2fa7de792d.png"
                   />

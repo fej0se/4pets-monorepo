@@ -23,7 +23,7 @@ export function Nav(props) {
       <Desktop>
         <nav className="navbar navbar-expand-md navbar-dark NvBackground justify-content-around">
           <a className="navbar-brand" href={"../"}>
-            <img src={logo} alt="logo" />
+            <img src={logo} alt="logo 4pets" />
           </a>
           <div>
             <Form>
@@ -53,18 +53,18 @@ export function Nav(props) {
           </div>
           <div className="social">
             <a href="../">
-              <img alt="" className="ellipse7" src={home} />
+              <img alt="botao home" className="ellipse7" src={home} />
             </a>
             <a href="http://facebook.com">
               <img
-                alt=""
+                alt="botao facebook"
                 className="ellipse7"
                 src="https://static.overlay-tech.com/assets/0a6c99e4-ab70-4288-93aa-3fe6d1a6b1d2.png"
               />
             </a>
             <a href="http://instagram.com">
               <img
-                alt=""
+                alt="botao instagram"
                 className="ellipse7"
                 src="https://static.overlay-tech.com/assets/2d46c838-964b-4deb-a44d-d84baa3a5fec.png"
               />
@@ -75,7 +75,7 @@ export function Nav(props) {
       <Mobile>
         <nav className="navbar navbar-expand-md navbar-dark NvMobile justify-content-around">
           <a className="navbar-brand" href={"../"}>
-            <img src={logo} alt="logo" />
+            <img src={logo} alt="logo 4pets" />
           </a>
           <div>
             <Form>
