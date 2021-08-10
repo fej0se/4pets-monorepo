@@ -1,0 +1,52 @@
+.errorcontainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 80px;
+}
+.errorcomponent {
+  margin-top: 50px;
+  height: 448px;
+  width: 427px;
+  display: flex;
+  justify-content: center;
+  background-color: #ffffff;
+}
+.textLower {
+  text-align: center;
+  vertical-align: top;
+  font-size: 18px;
+  font-family: Roboto;
+  color: #000;
+}
+.bigtext {
+  text-align: center;
+  vertical-align: top;
+  font-size: 50px;
+  font-family: Poppins;
+  line-height: 110.00000238418579%;
+  color: #373533;
+}
+.errorcomponent img {
+  height: 170px;
+  width: 168px;
+}
+.btnrecarregar {
+  height: 60px;
+  width: 247px;
+}
+.formabotao {
+  border-radius: 50px;
+  height: 60px;
+  width: 247px;
+  background-color: #dc9b61;
+  cursor: pointer;
+}
+.textbtnn {
+  text-align: center;
+  vertical-align: middle;
+  font-size: 28px;
+  font-family: Poppins;
+  line-height: 60px;
+  color: #373026;
+}

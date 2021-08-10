@@ -47,7 +47,11 @@ const AboutContact = () => {
       <Nav />
       <div className="containerDesk">
         <div id="sobre" className="container just">
-          <img className="imagemab" src={about} alt="" />
+          <img
+            className="imagemab"
+            src={about}
+            alt="imagem gato brincando com cachorro"
+          />
           <div className="textcontainer">
             <p className="txttitle">Sobre nós</p>
             <p className="textab">
@@ -114,7 +118,11 @@ const AboutContact = () => {
               </div>
             </Form>
           </div>
-          <img className="imagemab" src={contact} alt="" />
+          <img
+            className="imagemab"
+            src={contact}
+            alt="mulheres passeando com pets"
+          />
         </div>
       </div>
 

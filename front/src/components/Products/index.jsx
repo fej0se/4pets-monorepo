@@ -4,11 +4,13 @@ import Responsive from "react-responsive";
 import api from "../../services/api";
 
 import { Card } from "../Card";
+import { PageError } from "../PageError";
 
 import "./products.css";
 
 export function Products() {
   const [data, setData] = useState("");
+  const [error, setError] = useState(false);
 
   function getRandomIntInclusive(min, max) {
     min = Math.ceil(min);
@@ -19,17 +21,24 @@ export function Products() {
   useEffect(() => {
     api
       .get(`store/products?page=1`)
-      .then((response) => response.data.data.pages)
+      .then((response) => response.data.data)
       .then((page) =>
         api
           .get(`store/products?page=${getRandomIntInclusive(1, page)}`)
           .then((response) => {
+            if (response.data.data.products.lenght === 0) {
+              setError("404");
+              setLoading(false);
+              return;
+            }
             setData(response.data.data.products);
             setLoading(false);
           })
       )
-      .catch((err) => {
-        console.error("ops! ocorreu um erro" + err);
+      .catch(() => {
+        setError("500");
+        setLoading(false);
+        return;
       });
   }, []);
 
@@ -38,8 +47,13 @@ export function Products() {
   const [isLoading, setLoading] = useState(true);
 
   if (isLoading) {
-    return <div className="App">Loading...</div>;
+    return <div className="App">Carregando...</div>;
   }
+
+  if (error) {
+    return <PageError error={error} />;
+  }
+
   return (
     <div>
       <h3>Destaques da semana.</h3>{" "}

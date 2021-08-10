@@ -13,6 +13,7 @@ import dog2 from "../../assets/bannerdog2.png";
 import catbtn from "../../assets/catbtn.png";
 import dogbtn from "../../assets/dogbtn.png";
 import { Card } from "../../components/Card";
+import { PageError } from "../../components/PageError";
 
 import "./styles.css";
 
@@ -20,6 +21,7 @@ const Category = () => {
   const { departamento, categoria } = useParams();
   const [isLoading, setLoading] = useState(true);
   const [data, setData] = useState("");
+  const [error, setError] = useState(false);
 
   const Desktop = (props) => <Responsive {...props} minWidth={1024} />;
   const Mobile = (props) => <Responsive {...props} maxWidth={1023} />;
@@ -70,16 +72,33 @@ const Category = () => {
         `/store/findBy?limit=6&department=${load.id}&category=${category}&page=1&by=id&order=DESC`
       )
       .then((response) => {
+        if (response.data.data.products.lenght === 0) {
+          setError("404");
+          setLoading(false);
+          return;
+        }
         setData(response.data.data);
         setLoading(false);
       })
       .catch((err) => {
-        console.error("ops! ocorreu um erro" + err);
+        setError("500");
+        setLoading(false);
+        return;
       });
   }, []);
 
   if (isLoading) {
-    return <div className="App">Loading...</div>;
+    return <div className="App">Carregando...</div>;
+  }
+
+  if (error) {
+    return (
+      <>
+        <Nav />
+        <PageError error={error} />
+        <Footer />
+      </>
+    );
   }
 
   return (
@@ -91,7 +110,7 @@ const Category = () => {
             <div className="btnback">
               <div className="btnform" style={{ color: load.color }}>
                 <div>
-                  <img src={load.button} alt="" />
+                  <img src={load.button} alt="botao cachorro/gato" />
                 </div>
                 <div>
                   <p>Voltar para {load.btntitle}</p>
@@ -99,8 +118,8 @@ const Category = () => {
               </div>
             </div>
             <div className="bannercat">
-              <img src={load.img} alt="" />
-              <img src={load.img2} alt="" />
+              <img src={load.img} alt="banner" />
+              <img src={load.img2} alt="banner" />
             </div>
 
             <div className="prodsrender">
@@ -119,7 +138,7 @@ const Category = () => {
         <div className="fixfooter">
           <div className="back" style={{ color: load.color }}>
             <div>
-              <img src={load.button} alt="" />
+              <img src={load.button} alt="botao cachorro/gato" />
             </div>
             <div>
               <a href={`../departamento/${load.deptoname}`}>

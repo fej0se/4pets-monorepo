@@ -16,7 +16,7 @@ export const CatDog = () => {
           </p>
         </div>
         <div className="whatischildren">
-          <img src={cat} alt="" />
+          <img src={cat} alt="gatinho dormindo" />
         </div>
         <div className="whatischildren">
           <span>Como funciona</span>
@@ -33,13 +33,13 @@ export const CatDog = () => {
         <div className="top">
           <div>
             <a href="./departamento/gatos">
-              <img src={roundCat} alt="" />
+              <img src={roundCat} alt="foto gato" />
             </a>
             <p className="txt">Gato</p>
           </div>
           <div>
             <a href="./departamento/caes">
-              <img src={roundDog} alt="" />
+              <img src={roundDog} alt="foto cachorro" />
             </a>
             <p className="txt">Cachorro</p>
           </div>

@@ -9,10 +9,10 @@ export function Banner() {
   return (
     <div className="banner">
       <Desktop>
-        <img src={bannerdesk} alt="" />
+        <img src={bannerdesk} alt="banner da loja" />
       </Desktop>
       <Mobile>
-        <img src={bannerdesk} alt="" />
+        <img src={bannerdesk} alt="banner da loja" />
       </Mobile>
     </div>
   );

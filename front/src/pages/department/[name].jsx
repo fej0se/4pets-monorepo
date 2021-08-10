@@ -8,17 +8,28 @@ import { Footer } from "../../components/Footer";
 import { Nav } from "../../components/Nav";
 import { Card } from "../../components/Card";
 import { CatCard } from "../../components/CatCard";
+import { PageError } from "../../components/PageError";
 
 import cat from "../../assets/bannercat.png";
 import dog from "../../assets/bannerdog.png";
 import catbtn from "../../assets/catbtn.png";
 import dogbtn from "../../assets/dogbtn.png";
+import dogverao from "../../assets/dogverao.png";
+import doginverno from "../../assets/doginverno.png";
+import dogacessorios from "../../assets/dogacessorios.png";
+import dogdiversos from "../../assets/dogdiversos.png";
+import catverao from "../../assets/catverao.png";
+import catinverno from "../../assets/catinverno.png";
+import catacessorios from "../../assets/catacessorios.png";
+import catdiversos from "../../assets/catdiversos.png";
+
 import "./styles.css";
 //...
 
 const Department = () => {
   const { name } = useParams();
   const [isLoading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
   const [data, setData] = useState("");
 
   const Desktop = (props) => <Responsive {...props} minWidth={1024} />;
@@ -33,6 +44,12 @@ const Department = () => {
           rollbacklink: 2,
           btntitle: "gatos",
           color: "#92c2ac",
+          images: {
+            verao: dogverao,
+            inverno: doginverno,
+            acessorios: dogacessorios,
+            diversos: dogdiversos,
+          },
         }
       : {
           id: 2,
@@ -41,6 +58,12 @@ const Department = () => {
           btntitle: "cachorros",
           rollbacklink: 1,
           color: "#EEAD73",
+          images: {
+            verao: catverao,
+            inverno: catinverno,
+            acessorios: catacessorios,
+            diversos: catdiversos,
+          },
         };
 
   const loadMobile =
@@ -66,25 +89,25 @@ const Department = () => {
     {
       id: 1,
       name: "Verão",
-      image: "https://i.ibb.co/BsWYTPL/Nomads-Dog.png",
+      image: name === "caes" ? dogverao : catverao,
       linkName: "verao",
     },
     {
       id: 2,
       name: "Inverno",
-      image: "https://i.ibb.co/BsWYTPL/Nomads-Dog.png",
+      image: name === "caes" ? doginverno : catinverno,
       linkName: "inverno",
     },
     {
       id: 3,
       name: "Diversos",
-      image: "https://i.ibb.co/BsWYTPL/Nomads-Dog.png",
+      image: name === "caes" ? dogdiversos : catdiversos,
       linkName: "diversos",
     },
     {
       id: 4,
       name: "Acessórios",
-      image: "https://i.ibb.co/BsWYTPL/Nomads-Dog.png",
+      image: name === "caes" ? dogacessorios : catacessorios,
       linkName: "acessorios",
     },
   ];
@@ -93,16 +116,33 @@ const Department = () => {
     api
       .get(`store/getAllByDep?limit=3&department=${load.id}&page=1`)
       .then((response) => {
+        if (response.data.data.products.lenght === 0) {
+          setError("404");
+          setLoading(false);
+          return;
+        }
         setData(response.data.data.products);
         setLoading(false);
       })
-      .catch((err) => {
-        console.error("ops! ocorreu um erro" + err);
+      .catch(() => {
+        setError("500");
+        setLoading(false);
+        return;
       });
   }, []);
 
   if (isLoading) {
-    return <div className="App">Loading...</div>;
+    return <div className="App">Carregando...</div>;
+  }
+
+  if (error) {
+    return (
+      <>
+        <Nav />
+        <PageError error={error} />
+        <Footer />
+      </>
+    );
   }
 
   return (
@@ -114,14 +154,14 @@ const Department = () => {
             <div className="btnback">
               <div className="btnform" style={{ color: load.color }}>
                 <div>
-                  <img src={load.button} alt="" />
+                  <img src={load.button} alt="botao volta" />
                 </div>
                 <div>
                   <p>Ir para {load.btntitle}</p>
                 </div>
               </div>
             </div>
-            <img src={load.img} alt="" />
+            <img src={load.img} alt="imagem do departamento" />
           </div>
           <div className="lastproducts">
             <h1>Últimos produtos</h1>
@@ -150,7 +190,7 @@ const Department = () => {
         <div className="fixfooter">
           <div className="back" style={{ color: loadMobile.color }}>
             <div>
-              <img src={loadMobile.button} alt="" />
+              <img src={loadMobile.button} alt="botao volta" />
             </div>
             <div>
               <p>{loadMobile.btntitle}</p>
@@ -166,7 +206,7 @@ const Department = () => {
             <h1>Categorias</h1>
             {categories.map((category, index) => (
               <div className="caty">
-                <img src={category.image} alt="" />
+                <img src={category.image} alt="imagem da categoria" />
                 <a href={`/${name}/${category.linkName}`}>{category.name}</a>
               </div>
             ))}

@@ -27,7 +27,11 @@ export const Card = (props) => {
         <div className="prodcat" style={{ background: catcolor }}>
           <p>{props.prod.category.name}</p>
         </div>
-        <img className="imagem" src={props.prod.image} alt="..." />
+        <img
+          className="imagem"
+          src={props.prod.image}
+          alt="imagem do produto"
+        />
         <div className="card-body p-4">
           <h5 className="card-title titletext">{props.prod.name}</h5>
 
