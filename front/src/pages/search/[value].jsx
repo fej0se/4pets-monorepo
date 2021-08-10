@@ -22,7 +22,7 @@ const Search = () => {
 
   useEffect(() => {
     api
-      .get(`/store/'search?name=${search}&page=1'`)
+      .get(`/store/search?name=${search}&page=1`)
       .then((response) => {
         if (response.data.data.products.lenght === 0) {
           setError("404");
