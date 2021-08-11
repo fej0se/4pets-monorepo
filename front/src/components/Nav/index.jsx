@@ -15,7 +15,7 @@ export function Nav(props) {
     if (e.key === "Enter") {
       search = e.target.value;
       history.push(`/produtos?search=${search}`);
-      e.preventDefault();
+      window.location.reload();
     }
   };
   return (

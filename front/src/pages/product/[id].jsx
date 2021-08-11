@@ -74,11 +74,13 @@ const Product = () => {
 
   function Cat(props) {
     return (
-      <div className="sizes">
-        <div className="size">
-          <span>ÚNICO</span>
+      <>
+        <div className="sizes">
+          <div className="size" style={{ "background-color": "#fcc869" }}>
+            <span>ÚNICO</span>
+          </div>
         </div>
-      </div>
+      </>
     );
   }
 
@@ -133,7 +135,7 @@ const Product = () => {
   function RenderSizes(props) {
     const { type, data } = props;
 
-    if (type === "dogs") {
+    if (type === "Dogs") {
       return (
         <div>
           <div className="sizes">
@@ -177,7 +179,14 @@ const Product = () => {
             </div>
             <div className="productdesc textcontainer">
               <p className="desctxt">Descrição</p>
-              <p className="text">{data.description}</p>
+              <p className="text">
+                <span
+                  dangerouslySetInnerHTML={{
+                    __html: data.description,
+                  }}
+                ></span>
+              </p>
+              <p className="desctxt2">Tamanhos</p>
               <RenderSizes
                 type={data.category.department.name}
                 data={data.sizes}

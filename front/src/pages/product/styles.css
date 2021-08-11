@@ -19,9 +19,9 @@
   word-wrap: break-word;
 }
 
-.productphoto {
+.productphoto img {
   height: 527px;
-  width: 578px;
+  max-width: 578px;
 }
 .text {
   font-size: 12px;
@@ -38,6 +38,15 @@
   text-align: left;
   vertical-align: top;
   font-size: 28px;
+  font-family: Poppins;
+  color: #000;
+}
+
+.desctxt2 {
+  padding-top: 20px;
+  text-align: left;
+  vertical-align: top;
+  font-size: 18px;
   font-family: Poppins;
   color: #000;
 }
@@ -62,7 +71,7 @@
 }
 .sizes {
   display: flex;
-  margin-top: 40px;
+  margin-top: 20px;
   justify-content: space-between;
 }
 .size {

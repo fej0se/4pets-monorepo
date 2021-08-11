@@ -13,6 +13,7 @@ export function Products() {
   const [error, setError] = useState(false);
 
   function getRandomIntInclusive(min, max) {
+    console.log(min, max);
     min = Math.ceil(min);
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -21,10 +22,15 @@ export function Products() {
   useEffect(() => {
     api
       .get(`store/products?page=1`)
-      .then((response) => response.data.data)
-      .then((page) =>
+      .then((response) =>
         api
-          .get(`store/products?page=${getRandomIntInclusive(1, page)}`)
+          .get(
+            `store/products?page=${
+              getRandomIntInclusive(1, parseInt(response.data.data.pages))
+                ? getRandomIntInclusive(1, parseInt(response.data.data.pages))
+                : 1
+            }`
+          )
           .then((response) => {
             if (response.data.data.products.lenght === 0) {
               setError("404");
