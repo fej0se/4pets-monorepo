@@ -227,7 +227,7 @@ const Department = () => {
           </div>
         </div>
       </Mobile>
-      <Footer />
+      <Footer location={name} />
     </div>
   );
 };
