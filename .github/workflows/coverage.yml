@@ -22,7 +22,7 @@ jobs:
         env:
           DB_HOST: db-mysql-nyc3-51803-do-user-9201426-0.b.db.ondigitalocean.com
           DB_PORT: 25060
-          DB_USER: ${{ secrets.DB_USER }}
+          DB_USER: doadmin
           DB_PASS: ${{ secrets.DB_PASS }}
           DB_DIALECT: mysql
           DB_NAME_TEST: tests
