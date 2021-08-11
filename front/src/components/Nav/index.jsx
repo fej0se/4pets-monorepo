@@ -40,6 +40,11 @@ export function Nav(props) {
           <div>
             <ul className="navbar-nav">
               <li className="nav-item">
+                <a className="nav-link homeee" href="../">
+                  Home
+                </a>
+              </li>
+              <li className="nav-item">
                 <a className="nav-link" href="/contato-sobre#contato">
                   Contato
                 </a>
@@ -52,9 +57,6 @@ export function Nav(props) {
             </ul>
           </div>
           <div className="social">
-            <a href="../">
-              <img alt="botao home" className="ellipse7" src={home} />
-            </a>
             <a href="http://facebook.com">
               <img
                 alt="botao facebook"

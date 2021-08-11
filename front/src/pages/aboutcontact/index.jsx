@@ -33,11 +33,13 @@ const AboutContact = () => {
   const handleSubmit = async (e) => {
     try {
       await schema.validate(form, { abortEarly: false });
-      toast.success("Contato enviado com sucesso! 🐱🐶💕");
+      toast.success("Contato enviado com sucesso! 🐱🐶💕", {
+        autoClose: 10000,
+      });
     } catch (error) {
       const errors = [];
       error.inner.map((e) => errors.push(e.message));
-      errors.map((item) => toast.error(item));
+      errors.map((item) => toast.error(item, { autoClose: 15000 }));
     }
     e.preventDefault();
   };

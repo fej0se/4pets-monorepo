@@ -40,6 +40,14 @@ nav .navbar-nav li a {
   color: #333030;
 }
 
+.homeee {
+  vertical-align: top;
+  font-size: 18px;
+  font-family: Roboto;
+  color: #333030;
+  font-weight: bold;
+}
+
 .flexWrapperOneNav {
   border-radius: 8px;
   padding: 17px 0 14.92px 10px;

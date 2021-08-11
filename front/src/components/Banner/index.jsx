@@ -1,5 +1,6 @@
 import Responsive from "react-responsive";
 import bannerdesk from "../../assets/banner.png";
+import bannermobi from "../../assets/bannerrmobile.png";
 import "./banner.css";
 
 export function Banner() {
@@ -12,7 +13,7 @@ export function Banner() {
         <img src={bannerdesk} alt="banner da loja" />
       </Desktop>
       <Mobile>
-        <img src={bannerdesk} alt="banner da loja" />
+        <img src={bannermobi} alt="banner da loja" />
       </Mobile>
     </div>
   );

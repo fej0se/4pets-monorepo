@@ -19,9 +19,9 @@ export const Footer = (props) => {
       email = e.target.value;
       const isEmail = schema.isValidSync(email);
       if (isEmail) {
-        toast.success("E-mail cadastrado! 🐱🐶💕");
+        toast.success("E-mail cadastrado! 🐱🐶💕", { autoClose: 10000 });
       } else {
-        toast.error("Ops! entre com um e-mail válido!");
+        toast.error("Ops! entre com um e-mail válido!", { autoClose: 15000 });
       }
       e.preventDefault();
     }
