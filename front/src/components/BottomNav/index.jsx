@@ -21,17 +21,19 @@ const useStyles = makeStyles({
   },
 });
 
-export default function BottomNavi() {
+export default function BottomNavi(props) {
   const classes = useStyles();
-  const [value, setValue] = React.useState("home");
+  const [value, setValue] = React.useState(
+    props.location ? props.location : "home"
+  );
   const history = useHistory();
 
   const goto = (value) => {
     switch (value) {
-      case "dogs":
+      case "caes":
         history.push("../departamento/caes");
         break;
-      case "cats":
+      case "gatos":
         history.push("../departamento/gatos");
         break;
       case "contacts":
@@ -60,12 +62,12 @@ export default function BottomNavi() {
       />
       <BottomNavigationAction
         label="Cães"
-        value="dogs"
+        value="caes"
         icon={<FontAwesomeIcon icon={faDog} size="lg" />}
       />
       <BottomNavigationAction
         label="Gatos"
-        value="cats"
+        value="gatos"
         icon={<FontAwesomeIcon icon={faCat} size="lg" />}
       />
       <BottomNavigationAction

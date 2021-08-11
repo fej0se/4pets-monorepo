@@ -81,7 +81,7 @@ export const Footer = (props) => {
         </div>
       </Desktop>
       <Mobile>
-        <BottomNavi />
+        <BottomNavi location={props.location} />
         <ToastContainer />
       </Mobile>
     </div>

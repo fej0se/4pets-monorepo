@@ -189,7 +189,7 @@ const AboutContact = () => {
           </Form>
         </div>
       </div>
-      <Footer />
+      <Footer location="contacts" />
     </div>
   );
 };

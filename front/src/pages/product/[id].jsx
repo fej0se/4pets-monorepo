@@ -215,7 +215,13 @@ const Product = () => {
 
           <div className=" textcontainerMobi">
             <p className="desctxt">Descrição</p>
-            <p className="text">{data.description}</p>
+            <p className="text">
+              <span
+                dangerouslySetInnerHTML={{
+                  __html: data.description,
+                }}
+              ></span>
+            </p>
             <div className="storeinfo">
               <p className="texttostore">
                 Vendido por <span>{data.storeName}</span>

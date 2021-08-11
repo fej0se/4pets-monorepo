@@ -197,7 +197,7 @@ const Category = () => {
           </div>
         </div>
       </Mobile>
-      <Footer />
+      <Footer location={departamento} />
     </div>
   );
 };
