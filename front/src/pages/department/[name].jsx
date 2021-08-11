@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useHistory } from "react-router-dom";
 import { Row } from "react-bootstrap";
 import Responsive from "react-responsive";
 import api from "../../services/api";
@@ -31,6 +31,7 @@ const Department = () => {
   const [isLoading, setLoading] = useState(true);
   const [error, setError] = useState(false);
   const [data, setData] = useState("");
+  const history = useHistory();
 
   const Desktop = (props) => <Responsive {...props} minWidth={1024} />;
   const Mobile = (props) => <Responsive {...props} maxWidth={1023} />;
@@ -72,17 +73,17 @@ const Department = () => {
           id: 1,
           img: dog,
           rollbacklink: 2,
-          button: dogbtn,
+          button: catbtn,
           btntitle: "cachorros",
-          color: "#EEAD73",
+          color: "#92c2ac",
         }
       : {
           id: 2,
           img: cat,
           rollbacklink: 1,
-          button: catbtn,
+          button: dogbtn,
           btntitle: "gatos",
-          color: "#92c2ac",
+          color: "#EEAD73",
         };
 
   const categories = [
@@ -114,7 +115,7 @@ const Department = () => {
 
   useEffect(() => {
     api
-      .get(`store/getAllByDep?limit=3&department=${load.id}&page=1`)
+      .get(`store/getAllByDep?limit=20&department=${load.id}&page=1`)
       .then((response) => {
         if (response.data.data.products.lenght === 0) {
           setError("404");
@@ -152,12 +153,20 @@ const Department = () => {
         <div>
           <div className="deptocontainer">
             <div className="btnback">
-              <div className="btnform" style={{ color: load.color }}>
+              <div
+                onClick={() =>
+                  history.push(
+                    `/departamento/${name === "caes" ? "gatos" : "caes"}`
+                  )
+                }
+                className="btnform"
+                style={{ color: load.color }}
+              >
                 <div>
                   <img src={load.button} alt="botao volta" />
                 </div>
                 <div>
-                  <p>Ir para {load.btntitle}</p>
+                  <p>ㅤIr para ㅤ{load.btntitle}</p>
                 </div>
               </div>
             </div>
@@ -166,7 +175,7 @@ const Department = () => {
           <div className="lastproducts">
             <h1>Últimos produtos</h1>
             <Row xs={1} md={2} className="prods g-4">
-              {data.map((prod, index) => (
+              {data.slice(0, 3).map((prod, index) => (
                 <Card key={index} prod={prod} />
               ))}
             </Row>
@@ -193,12 +202,17 @@ const Department = () => {
               <img src={loadMobile.button} alt="botao volta" />
             </div>
             <div>
-              <p>{loadMobile.btntitle}</p>
+              <a
+                style={{ color: load.color }}
+                href={`../departamento/${name === "caes" ? "gatos" : "caes"}`}
+              >
+                Ir para {load.btntitle}
+              </a>
             </div>
           </div>
           <h1>Últimos produtos</h1>
           <div className="prods scrolling-wrapper row flex-row flex-nowrap mt-4 pb-4 pt-2">
-            {data.map((prod, index) => (
+            {data.slice(0, 6).map((prod, index) => (
               <Card key={index} prod={prod} />
             ))}
           </div>

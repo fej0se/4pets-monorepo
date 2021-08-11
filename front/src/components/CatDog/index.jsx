@@ -6,7 +6,7 @@ import "./catdog.css";
 
 export const CatDog = () => {
   return (
-    <div>
+    <div className="whatiscontainer">
       <div className="whatis">
         <div className="whatischildren">
           <span>O que é 4Pets?</span>

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useHistory } from "react-router-dom";
 import { Row } from "react-bootstrap";
 import Responsive from "react-responsive";
 import api from "../../services/api";
@@ -22,26 +22,10 @@ const Category = () => {
   const [isLoading, setLoading] = useState(true);
   const [data, setData] = useState("");
   const [error, setError] = useState(false);
+  const history = useHistory();
 
   const Desktop = (props) => <Responsive {...props} minWidth={1024} />;
   const Mobile = (props) => <Responsive {...props} maxWidth={1023} />;
-
-  function getCategory(value) {
-    switch (value) {
-      case "verao":
-        return 1;
-      case "inverno":
-        return 2;
-      case "diversos":
-        return 3;
-      case "acessorios":
-        return 4;
-      default:
-        return null;
-    }
-  }
-
-  const category = getCategory(categoria);
 
   const load =
     departamento === "caes"
@@ -54,6 +38,24 @@ const Category = () => {
           deptoname: "caes",
           rollbacklink: 2,
           color: "#92c2ac",
+          cat: [
+            {
+              name: "verao",
+              value: 1,
+            },
+            {
+              name: "inverno",
+              value: 2,
+            },
+            {
+              name: "diversos",
+              value: 3,
+            },
+            {
+              name: "acessorios",
+              value: 4,
+            },
+          ],
         }
       : {
           id: 2,
@@ -64,12 +66,34 @@ const Category = () => {
           dptoname: "gatos",
           color: "#EEAD73",
           rollbacklink: 1,
+          cat: [
+            {
+              name: "verao",
+              value: 5,
+            },
+            {
+              name: "inverno",
+              value: 6,
+            },
+            {
+              name: "diversos",
+              value: 7,
+            },
+            {
+              name: "acessorios",
+              value: 8,
+            },
+          ],
         };
+
+  const category = load.cat.filter((c) => {
+    return c.name === categoria;
+  });
 
   useEffect(() => {
     api
       .get(
-        `/store/findBy?limit=6&department=${load.id}&category=${category}&page=1&by=id&order=DESC`
+        `/store/findBy?limit=6&department=${load.id}&category=${category[0].value}&page=1&by=id&order=DESC`
       )
       .then((response) => {
         if (response.data.data.products.lenght === 0) {
@@ -108,7 +132,11 @@ const Category = () => {
         <div>
           <div className="catcontainer">
             <div className="btnback">
-              <div className="btnform" style={{ color: load.color }}>
+              <div
+                className="btnform"
+                onClick={() => history.push(`/departamento/${departamento}`)}
+                style={{ color: load.color }}
+              >
                 <div>
                   <img src={load.button} alt="botao cachorro/gato" />
                 </div>
@@ -123,7 +151,11 @@ const Category = () => {
             </div>
 
             <div className="prodsrender">
-              <h3>{data.products[0].category.name}</h3>
+              <h3>
+                {data.products[0].category.name
+                  .replace("- Cat", "")
+                  .replace("- Dog", "")}
+              </h3>
               <Row xs={1} md={2} className="prods g-4">
                 {data.products.map((prod, index) => (
                   <Card key={index} prod={prod} />
@@ -141,7 +173,10 @@ const Category = () => {
               <img src={load.button} alt="botao cachorro/gato" />
             </div>
             <div>
-              <a href={`../departamento/${load.deptoname}`}>
+              <a
+                style={{ color: load.color }}
+                href={`../departamento/${departamento}`}
+              >
                 Voltar para {load.btntitle}
               </a>
             </div>

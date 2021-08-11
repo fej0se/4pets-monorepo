@@ -1,5 +1,9 @@
+.whatiscontainer {
+  background-color: #ffffff;
+}
+
 .whatis {
-  margin: 50px;
+  padding: 50px;
   display: flex;
   justify-content: center;
 }

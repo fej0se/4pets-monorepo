@@ -8,9 +8,52 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg width='1920' height='1080' xmlns='http://www.w3.org/2000/svg'%3E%3Cg%3E%3Ctitle%3ELayer 1%3C/title%3E%3Crect transform='rotate(-52.0065 -128.9 769.2)' stroke='%23000' fill='%2398b2ba' x='-340.20334' y='547.13377' width='422.60666' height='444.13246' id='svg_1' rx='32' stroke-width='0'/%3E%3Crect transform='rotate(130.398 2043.6 337.2)' fill='%23fcc869' stroke='%23000' x='1838.60005' y='287.20003' width='320' height='320' id='svg_2' rx='38' stroke-width='0'/%3E%3C/g%3E%3C/svg%3E");
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+@media screen and (max-width: 1820px) {
+  body {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg width='1820' height='1080' xmlns='http://www.w3.org/2000/svg'%3E%3Cg%3E%3Ctitle%3ELayer 1%3C/title%3E%3Crect transform='rotate(-52.0065 -128.9 769.2)' stroke='%23000' fill='%2398b2ba' x='-340.20334' y='547.13377' width='422.60666' height='444.13246' id='svg_1' rx='32' stroke-width='0'/%3E%3Crect transform='rotate(130.398 1903.6 367.2)' fill='%23fcc869' stroke='%23000' x='1698.60003' y='317.20004' width='320' height='320' id='svg_2' rx='38' stroke-width='0'/%3E%3C/g%3E%3C/svg%3E");
+  }
+}
+
+@media screen and (max-width: 1675px) {
+  body {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg width='1675' height='1080' xmlns='http://www.w3.org/2000/svg'%3E%3Cg%3E%3Ctitle%3ELayer 1%3C/title%3E%3Crect transform='rotate(-52.0065 -128.9 769.2)' stroke='%23000' fill='%2398b2ba' x='-340.20334' y='547.13377' width='422.60666' height='444.13246' id='svg_1' rx='32' stroke-width='0'/%3E%3Crect transform='rotate(130.398 1731.6 387.2)' fill='%23fcc869' stroke='%23000' x='1526.60002' y='337.20004' width='320' height='320' id='svg_2' rx='38' stroke-width='0'/%3E%3C/g%3E%3C/svg%3E");
+  }
+}
+
+@media screen and (max-width: 1530px) {
+  body {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg width='1530' height='1080' xmlns='http://www.w3.org/2000/svg'%3E%3Cg%3E%3Ctitle%3ELayer 1%3C/title%3E%3Crect transform='rotate(-52.0065 -128.9 769.2)' stroke='%23000' fill='%2398b2ba' x='-340.20334' y='547.13377' width='422.60666' height='444.13246' id='svg_1' rx='32' stroke-width='0'/%3E%3Crect transform='rotate(130.398 1561.6 433.2)' fill='%23fcc869' stroke='%23000' x='1356.6' y='383.20005' width='320' height='320' id='svg_2' rx='38' stroke-width='0'/%3E%3C/g%3E%3C/svg%3E");
+  }
+}
+
+@media screen and (max-width: 1360px) {
+  body {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg width='1530' height='1080' xmlns='http://www.w3.org/2000/svg'%3E%3Cg%3E%3Ctitle%3ELayer 1%3C/title%3E%3Crect transform='rotate(-52.0065 -128.9 769.2)' stroke='%23000' fill='%2398b2ba' x='-340.20334' y='547.13377' width='422.60666' height='444.13246' id='svg_1' rx='32' stroke-width='0'/%3E%3Crect transform='rotate(130.398 1561.6 433.2)' fill='%23fcc869' stroke='%23000' x='1356.6' y='383.20005' width='320' height='320' id='svg_2' rx='38' stroke-width='0'/%3E%3C/g%3E%3C/svg%3E");
+  }
+}
+
+@media screen and (max-width: 1360px) {
+  body {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg width='1360' height='1080' xmlns='http://www.w3.org/2000/svg'%3E%3Cg%3E%3Ctitle%3ELayer 1%3C/title%3E%3Crect transform='rotate(-52.0065 -128.9 769.2)' stroke='%23000' fill='%2398b2ba' x='-340.20334' y='547.13377' width='422.60666' height='444.13246' id='svg_1' rx='32' stroke-width='0'/%3E%3Crect transform='rotate(130.398 1413.6 489.2)' fill='%23fcc869' stroke='%23000' x='1208.59999' y='439.20006' width='320' height='320' id='svg_2' rx='38' stroke-width='0'/%3E%3C/g%3E%3C/svg%3E");
+  }
+}
+
+@media screen and (max-width: 1240px) {
+  body {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg width='1240' height='1080' xmlns='http://www.w3.org/2000/svg'%3E%3Cg%3E%3Ctitle%3ELayer 1%3C/title%3E%3Crect transform='rotate(-52.0065 -128.9 769.2)' stroke='%23000' fill='%2398b2ba' x='-340.20334' y='547.13377' width='422.60666' height='444.13246' id='svg_1' rx='32' stroke-width='0'/%3E%3Crect transform='rotate(130.398 1305.6 481.2)' fill='%23fcc869' stroke='%23000' x='1100.59997' y='431.20005' width='320' height='320' id='svg_2' rx='38' stroke-width='0'/%3E%3C/g%3E%3C/svg%3E");
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  body {
+    background-image: url();
+  }
 }

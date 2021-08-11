@@ -8,9 +8,12 @@
 }
 
 .imagemcat {
-  padding-top: 22px;
-  max-width: 164px;
-  height: auto;
+  margin-top: 22px;
+  object-fit: cover; /* Do not scale the image */
+  object-position: top; /* Center the image within the element */
+  height: 180px;
+  width: 180px;
+  border-radius: 50%;
 }
 
 .cccontainer {

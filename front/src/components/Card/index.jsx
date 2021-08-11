@@ -25,7 +25,9 @@ export const Card = (props) => {
     <div className="col-lg-4 mb-5">
       <div className="card shadow cardprod">
         <div className="prodcat" style={{ background: catcolor }}>
-          <p>{props.prod.category.name}</p>
+          <p>
+            {props.prod.category.name.replace("- Cat", "").replace("- Dog", "")}
+          </p>
         </div>
         <img
           className="imagem"
@@ -35,7 +37,9 @@ export const Card = (props) => {
         <div className="card-body p-4">
           <h5 className="card-title titletext">{props.prod.name}</h5>
 
-          <p className="card-text descriptiontext">{props.prod.description}</p>
+          <p className="card-text descriptiontext">
+            {props.prod.description.replace("<br />", "")}
+          </p>
 
           <div className="d-flex justify-content-center btnbottom">
             <Button onClick={handlerProductRedirect} className="btnactive">

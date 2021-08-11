@@ -29,7 +29,7 @@ const Search = () => {
           setLoading(false);
           return;
         }
-        setData(response.data.data);
+        setData(response.data.data.products);
         setLoading(false);
       })
       .catch((err) => {

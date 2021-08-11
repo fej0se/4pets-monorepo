@@ -4,10 +4,11 @@
   border: 8px solid #ededed;
 }
 .imagem {
-  height: 188px;
-  width: 164px;
+  object-fit: cover; /* Do not scale the image */
+  object-position: top; /* Center the image within the element */
+  height: 180px;
+  width: 180px;
   margin: auto;
-  width: 50%;
   padding-top: 38px;
 }
 .titletext {
@@ -24,6 +25,10 @@
   font-size: 16px;
   font-family: Roboto;
   color: #000;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
 }
 .btnactive {
   height: 48px;
@@ -47,7 +52,8 @@
 }
 
 .prodcat {
-  width: 114px;
+  width: auto;
+  max-width: 110px;
   height: 31px;
 }
 
