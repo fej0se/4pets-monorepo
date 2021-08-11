@@ -20,12 +20,12 @@ jobs:
       - name: Collect coverage
         run: yarn test:back > OUT; sed -n 6,8p OUT > .github/workflows/COVERAGE_REPORT
         env:
-          DB_HOST: 144.126.222.3
-          DB_PORT: 32768
-          DB_USER: root
+          DB_HOST: db-mysql-nyc3-51803-do-user-9201426-0.b.db.ondigitalocean.com
+          DB_PORT: 25060
+          DB_USER: doadmin
           DB_PASS: ${{ secrets.DB_PASS }}
           DB_DIALECT: mysql
-          DB_NAME_TEST: test_database_name
+          DB_NAME_TEST: tests
           DB_NAME_STAGING: staging_database_name
           DB_NAME_PRODUCTION: production_database_name
 
