@@ -26,8 +26,8 @@ jobs:
           DB_PASS: ${{ secrets.DB_PASS }}
           DB_DIALECT: mysql
           DB_NAME_TEST: tests
-          DB_NAME_STAGING: staging
-          DB_NAME_PRODUCTION: defaultdb
+          DB_NAME_STAGING: staging_database_name
+          DB_NAME_PRODUCTION: production_database_name
 
       - uses: harupy/comment-on-pr@master
         env:
