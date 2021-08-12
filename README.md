@@ -25,7 +25,7 @@ Através de pesquisa com o usuário, mercado e benchmark optamos por utilizar so
 
 ## 🧰  Principais técnologias utilizadas
 
-<p align="center"><img src="https://i.ibb.co/QC4K1S3/tecs.png" /></p>
+<p align="center"><img width="100%"  src="https://i.ibb.co/QC4K1S3/tecs.png" /></p>
 
 
 
