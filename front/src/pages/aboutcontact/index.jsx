@@ -115,7 +115,7 @@ const AboutContact = () => {
                   type="submit"
                   className="btnabout my-4 mx-5"
                 >
-                  Saiba mais
+                  Enviar
                 </Button>
               </div>
             </Form>
@@ -185,7 +185,7 @@ const AboutContact = () => {
                 type="submit"
                 className="btnabout my-4 mx-5"
               >
-                Saiba mais
+                Enviar
               </Button>
             </div>
           </Form>
