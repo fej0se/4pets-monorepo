@@ -92,6 +92,7 @@ docker-compose up --build
 | :-------- | :------- | :-------------------------------- |
 | `id`      | `number` | **Required** - Id do produto |
 
+-----
 
 #### POST - adicionar produto
 
@@ -109,6 +110,8 @@ docker-compose up --build
 | `sizes`      | `Array<string>` | **Required** - tamanhos do produto |
 | `categoryId`      | `number` | **Required** - id da categoria que o produto pertence |
 
+-----
+
   
 #### DELETE - deletar produto
 
@@ -119,6 +122,8 @@ docker-compose up --build
 | Parametro | Tipo     | Descrição                       |
 | :-------- | :------- | :-------------------------------- |
 | `id`      | `number` | **Required** - Id do produto |
+
+-----
 
 #### PUT - atualizar produto
 
@@ -139,6 +144,8 @@ docker-compose up --build
 | `linkToProd`      | `string` | **Not Required** - link para loja |
 | `categoryId`      | `number` | **Not Required** - id da categoria que o produto pertence |
 
+-----
+
 #### GET - Procurar por categoria e departamento 
 
 ```http
@@ -154,6 +161,8 @@ docker-compose up --build
 | `by`      | `number` | **Required** - parametro a ser considerado na ordem (id, updatedAt...) |
 | `order`      | `string` | **Required** - ordem de retorno ASC/DESC |
 
+-----
+
 #### GET - um produto
 
 ```http
@@ -165,6 +174,8 @@ docker-compose up --build
 | `name`      | `string` | **Required** - parametro a ser buscado|
 | `page`      | `number` | **Required** - pagina atual |
 
+-----
+
 #### POST - criar categoria
 
 ```http
@@ -175,6 +186,7 @@ docker-compose up --build
 | :-------- | :------- | :-------------------------------- |
 | `name`      | `string` |  **Required** nome do departamento|
 
+-----
 
 #### POST - criar categoria
 
@@ -187,6 +199,7 @@ docker-compose up --build
 | `name`      | `string` | **Required** - nome da categoria |
 | `departmentId`      | `number` | **Required** - id do departamento a qual vai pertencer|
 
+-----
 
 #### GET - procurar produtos de um departamento
 
