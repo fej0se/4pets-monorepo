@@ -39,7 +39,8 @@ Através de pesquisa com o usuário, mercado e benchmark optamos por utilizar so
 **Automação:** GitHub Actions
 ## 💻  Screenshots
 
-<p align="center"><img src="https://im6.ezgif.com/tmp/ezgif-6-f893a77890a0.gif" /></p>
+<p align="center"><img width="100%" src="https://media.giphy.com/media/tKsZJCIQNVOGn1bTi9/giphy.gif" /></p>
+
 
   
 
