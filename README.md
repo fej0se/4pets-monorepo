@@ -4,7 +4,7 @@
 
 ## Deploy link
 
-[4pets.company](https://www.4pets.company)
+[4pets.company](https://4pets.company)
 
 ## Time
 
