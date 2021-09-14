@@ -15,6 +15,6 @@ ENV PATH /app/node_modules/.bin:$PATH
 COPY . .
 RUN yarn install
 RUN yarn build:back
-COPY ./back/src/infra/** ./back/dist/infra 
+COPY ./back/src/infra/** ./infra 
 
 CMD ["node", "back/dist/main.js"]
