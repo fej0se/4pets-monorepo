@@ -4,7 +4,11 @@ import { AppModule } from './app.module';
 
 async function bootstrap() {
   const app = await NestFactory.create<NestExpressApplication>(AppModule);
-  var whitelist = ['https://4pets.company', 'https://www.4pets.company'];
+  var whitelist = [
+    'https://4pets.company',
+    'https://www.4pets.company',
+    'https://falling-shadow-8881.fly.dev',
+  ];
 
   app.setGlobalPrefix('api/v1');
   app.enableCors({

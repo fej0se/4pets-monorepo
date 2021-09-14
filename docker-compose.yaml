@@ -1,11 +1,16 @@
 version: "3.7"
 
 services:
-  app:
-    build: .
-    container_name: 4pets-backend
+  backend:
+    build: "./back"
     ports:
       - 3000:3000
     volumes:
-      - .:/home/node/app
-    network_mode: bridge
+      - ../backend:/usr/src/app
+
+  frontend:
+    build: "./front"
+    ports:
+      - 5000:5000
+    volumes:
+      - ../frontend:/usr/src/app
