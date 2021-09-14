@@ -63,7 +63,7 @@ export class StoreService {
     const count = await this.productsRepository.count();
 
     const random = await this.productsRepository.findAll({
-      order: [Sequelize.fn('RAND')],
+      order: [Sequelize.fn('RANDOM')],
       limit: 6,
     });
 
@@ -179,7 +179,7 @@ export class StoreService {
     });
 
     const random = await this.productsRepository.findAll({
-      order: [Sequelize.fn('RAND')],
+      order: [Sequelize.fn('RANDOM')],
       limit: 3,
       include: [
         {

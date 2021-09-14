@@ -16,9 +16,11 @@ describe('StoreController with test env', () => {
     await app.init();
   });
 
-  it('should get production schema', async () => {
-    expect(Products.sequelize.getDatabaseName()).toBe(
-      'production_database_name',
+  it('should storage be production', async () => {
+    const sql = new Object(Products.sequelize.getQueryInterface()) as any;
+
+    expect(sql.queryGenerator.sequelize.options.storage).toContain(
+      'production',
     );
   });
 });
