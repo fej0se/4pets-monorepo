@@ -17,7 +17,9 @@ describe('StoreController with test env', () => {
     await app.init();
   });
 
-  it('should get staging schema', async () => {
-    expect(Products.sequelize.getDatabaseName()).toBe('staging_database_name');
+  it('should storage be staging', async () => {
+    const sql = new Object(Products.sequelize.getQueryInterface()) as any;
+
+    expect(sql.queryGenerator.sequelize.options.storage).toContain('staging');
   });
 });

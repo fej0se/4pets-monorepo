@@ -9,8 +9,15 @@ export interface IDatabaseConfigAttributes {
   logging?: boolean;
 }
 
+export interface ISQLiteConfigAttributes {
+  dialect: string;
+  storage: string;
+}
+
+export type Database = IDatabaseConfigAttributes | ISQLiteConfigAttributes;
+
 export interface IDatabaseConfig {
-  staging: IDatabaseConfigAttributes;
-  test: IDatabaseConfigAttributes;
-  production: IDatabaseConfigAttributes;
+  staging: Database;
+  test: Database;
+  production: Database;
 }

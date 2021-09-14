@@ -5,28 +5,16 @@ dotenv.config();
 
 export const databaseConfig: IDatabaseConfig = {
   staging: {
-    username: process.env.DB_USER,
-    password: process.env.DB_PASS,
-    database: process.env.DB_NAME_STAGING,
-    host: process.env.DB_HOST,
-    port: process.env.DB_PORT,
-    dialect: process.env.DB_DIALECT,
+    dialect: 'sqlite',
+    storage: './src/infra/database/staging.sqlite',
   },
   test: {
-    username: process.env.DB_USER,
-    password: process.env.DB_PASS,
-    database: process.env.DB_NAME_TEST,
-    host: process.env.DB_HOST,
-    port: process.env.DB_PORT,
-    dialect: process.env.DB_DIALECT,
+    dialect: 'sqlite',
+    storage: './src/infra/database/test.sqlite',
     logging: false,
   },
   production: {
-    username: process.env.DB_USER,
-    password: process.env.DB_PASS,
-    database: process.env.DB_NAME_PRODUCTION,
-    host: process.env.DB_HOST,
-    port: process.env.DB_PORT,
-    dialect: process.env.DB_DIALECT,
+    dialect: 'sqlite',
+    storage: './src/infra/database/production.sqlite',
   },
 };
