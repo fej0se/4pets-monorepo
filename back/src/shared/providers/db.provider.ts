@@ -28,6 +28,7 @@ export const databaseProviders = [
         sequelize.addModels([Departments, Categories, Sizes, Products]);
         return sequelize.close();
       } else {
+        console.log('DATABASE: ', config);
         const sequelize = new Sequelize(config);
         sequelize.addModels([Departments, Categories, Sizes, Products]);
         await sequelize.sync({ force: false });
