@@ -21,7 +21,6 @@ jobs:
       - name: Collect coverage
         run: yarn test:back > OUT; sed -n 6,8p OUT > .github/workflows/COVERAGE_REPORT
       # This step runs `flyctl deploy in backend`.
-      - name: Deploy backend
       - uses: superfly/flyctl-actions@master
         env:
           FLY_PROJECT_PATH: back
@@ -29,7 +28,6 @@ jobs:
         with:
           args: "deploy"
       # This step runs `flyctl deploy in frontend`.
-      - name: Deploy frontend
       - uses: superfly/flyctl-actions@master
         env:
           FLY_PROJECT_PATH: front
