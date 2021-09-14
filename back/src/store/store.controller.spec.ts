@@ -217,8 +217,6 @@ describe('StoreController with test env', () => {
       '/store/getAllByDep?department=10&limit=2&page=1',
     );
 
-    console.log(response.body);
-
     expect(response.status).toBe(HttpStatus.NOT_FOUND);
     expect(response.body.success).toBeFalsy;
     expect(response.body.data.message).toBe(NO_PRODUCTS_FOUND);
