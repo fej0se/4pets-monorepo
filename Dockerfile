@@ -10,11 +10,11 @@ ENV NODE_ENV=production
 
 WORKDIR /app
 COPY package*.json ./
+COPY ./back/src/infra/** ./infra 
 ENV PATH /app/node_modules/.bin:$PATH
 
 COPY . .
 RUN yarn install
 RUN yarn build:back
-COPY ./back/src/infra/** ./infra 
 
 CMD ["node", "back/dist/main.js"]
