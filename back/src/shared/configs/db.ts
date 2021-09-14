@@ -15,6 +15,6 @@ export const databaseConfig: IDatabaseConfig = {
   },
   production: {
     dialect: 'sqlite',
-    storage: './back/dist/infra/database/production.sqlite',
+    storage: './dist/infra/database/production.sqlite',
   },
 };
