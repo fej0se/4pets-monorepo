@@ -21,7 +21,7 @@ async function bootstrap() {
         callback(new Error('Not allowed by CORS'));
       }
     },
-    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE,OPTIONS',
+    methods: 'PUT,PATCH,POST,DELETE',
     credentials: true,
   });
   await app.listen(process.env.PORT || 3000);
