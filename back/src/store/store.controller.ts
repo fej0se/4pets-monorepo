@@ -2,6 +2,7 @@ import {
   Body,
   Delete,
   Get,
+  Headers,
   HttpStatus,
   Param,
   Query,
@@ -58,7 +59,9 @@ export class StoreController {
   }
 
   @Post('product')
-  async createProduct(@Body() product: IProduct) {
+  async createProduct(@Headers('x-auth') token, @Body() product: IProduct) {
+    if (token !== process.env.ADMIN_TOKEN) throw new Error('Unauthorized');
+
     return {
       success: true,
       data: await this.storeService.createProduct(product),
@@ -66,7 +69,9 @@ export class StoreController {
   }
 
   @Delete('product/:id')
-  async deleteProduct(@Param('id') id, @Res() res) {
+  async deleteProduct(@Headers('x-auth') token, @Param('id') id, @Res() res) {
+    if (token !== process.env.ADMIN_TOKEN) throw new Error('Unauthorized');
+
     const response = await this.storeService.deleteProduct(id);
     if (response) {
       res.status(HttpStatus.OK).send({
@@ -82,8 +87,15 @@ export class StoreController {
   }
 
   @Put('product/:id')
-  async updateProduct(@Param('id') id, @Body() data, @Res() res) {
+  async updateProduct(
+    @Headers('x-auth') token,
+    @Param('id') id,
+    @Body() data,
+    @Res() res,
+  ) {
     const response = await this.storeService.updateProduct(id, data);
+    if (token !== process.env.ADMIN_TOKEN) throw new Error('Unauthorized');
+
     if (response) {
       res.status(HttpStatus.OK).send({
         success: true,
@@ -162,7 +174,12 @@ export class StoreController {
 
   //departments routes
   @Post('department')
-  async createDepartment(@Body() department: IDepartment) {
+  async createDepartment(
+    @Headers('x-auth') token,
+    @Body() department: IDepartment,
+  ) {
+    if (token !== process.env.ADMIN_TOKEN) throw new Error('Unauthorized');
+
     return {
       success: true,
       data: await this.storeService.crateDepartment(department),
@@ -202,7 +219,9 @@ export class StoreController {
   //categories routes
 
   @Post('category')
-  async createCategory(@Body() category: ICategory) {
+  async createCategory(@Headers('x-auth') token, @Body() category: ICategory) {
+    if (token !== process.env.ADMIN_TOKEN) throw new Error('Unauthorized');
+
     return {
       success: true,
       data: await this.storeService.createCategory(category),
