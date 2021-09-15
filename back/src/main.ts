@@ -4,15 +4,13 @@ import { AppModule } from './app.module';
 
 async function bootstrap() {
   const app = await NestFactory.create<NestExpressApplication>(AppModule);
-  var whitelist = [
-    'https://4pets.company',
-    'https://www.4pets.company',
-    'https://falling-shadow-8881.fly.dev',
-    'http://localhost',
-  ];
 
   app.setGlobalPrefix('api/v1');
-
+  app.enableCors({
+    origin: true,
+    methods: 'GET,PUT,PATCH,POST,DELETE',
+    credentials: false,
+  });
   await app.listen(process.env.PORT || 3000);
 }
 bootstrap();
